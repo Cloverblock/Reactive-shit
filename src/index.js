@@ -15,6 +15,7 @@ const root =
       )
     )
   );
+  alert("PIZDA");
 render(root, node); //
 
 reportWebVitals();
