@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import PropTypes from "prop-types";
-import {createRoot} from "react-dom/client"
+
 
 const node = document.getElementById('root');
 class Post extends Component {
@@ -75,19 +75,19 @@ class CreateComment extends Component {
         },
         React.createElement('input', {
           type:'text',
-          placeholder: 'Your name',
+          placeholder: 'Ваше имя',
           value: this.state.user,
           onChange: this.handleUserChange
         }),
         React.createElement('input', {
           type: 'text',
-          placeholder:'Thoughts?',
+          placeholder:'Комментарий',
           value: this.state.content,
           onChange: this.handleTextChange
         }),
         React.createElement('input', {
           type: 'submit',
-          value:'Post'
+          value:'Публикация'
         })
       );
     }
@@ -105,7 +105,7 @@ CreateComment.propTypes = {
             className: 'comment'
           },
           React.createElement(
-            'h2',
+            'p',
             {
               className: 'commentAuthor',
               id: this.props.user
@@ -143,7 +143,7 @@ const App = React.createElement(CreateComment);
 const data = {
   post: {
     id: 123,
-    content:': "Да не боись, не ебанёт" - Робер Оппенгеймер',
+    content:': "Да не боись, не ебанёт" - Роберт Оппенгеймер',
     user: 'Samuel Jackson'
   },
   comments: [
