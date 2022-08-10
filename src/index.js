@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import PropTypes from "prop-types";
-
+import './index.css';
 
 const node = document.getElementById('root');
 class Post extends Component {
