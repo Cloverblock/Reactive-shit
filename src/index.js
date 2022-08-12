@@ -36,22 +36,20 @@ class CreateComment extends Component {
     super(props);
     this.state = {
       content: '',
-      user:''
+      user: ''
     };
     this.handleUserChange = this.handleUserChange.bind(this);
     this.handleTextChange = this.handleTextChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   handleUserChange(event) {
-    const val = event.target.value;
     this.setState(() => ({
-      user: val
+      user: event.target.value
     }));
   }
     handleTextChange(event) {
-      const val = event.target.value;
       this.setState(() => ({
-        content: val
+        content: event.target.value
       }));
     }
     handleSubmit(event) {
@@ -62,7 +60,7 @@ class CreateComment extends Component {
       });
       this.setState(() => ({
         user:'',
-        content: ''
+        text: ''
       }));
     }
 
@@ -188,7 +186,7 @@ class CommentBox extends Component{
     comment.id = Date.now();
     const newComments = comments.concat([comment]);
     this.setState ({
-      comments:newComments
+      comments: newComments
     });
   }
   render(){
@@ -205,7 +203,7 @@ class CommentBox extends Component{
       this.state.comments.map(function(comment){
         return React.createElement(Comment, {
           key: comment.id,
-          id: comment.content,
+          id: comment.id,
           content: comment.content,
           user: comment.user
         });
